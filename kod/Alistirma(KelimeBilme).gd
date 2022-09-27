@@ -18,7 +18,9 @@ func _ready():
 #sözlük kelime okuma
 func dosyadan_oku(sozluk_adi):
 	var file = File.new()
-	file.open("res://%s.res" % sozluk_adi, file.READ)
+	var hata = file.open("user://%s.res" % sozluk_adi, file.READ)
+	if OK != hata:
+		return []
 	var liste = str2var(file.get_as_text())
 	file.close()
 	
