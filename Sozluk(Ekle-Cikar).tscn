@@ -1,24 +1,22 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://font/Crickhollow Demo.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://kod/Sozluk(Ekle-Cikar).gd" type="Script" id=2]
 [ext_resource path="res://font/RNK 4.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://resim/screenshot (1).png" type="Texture" id=4]
 [ext_resource path="res://font/Times Turkish Transcription.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://font/TimesTurkishTranscriptionSol.TTF" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
 font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=18]
-font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 10
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=19]
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 5 )
@@ -131,6 +129,9 @@ tracks/0/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 3 )
+
 [node name="Sozluk(Ekle-Cikar)" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -141,10 +142,10 @@ margin_bottom = 448.0
 input_pass_on_modal_close_click = false
 
 [node name="KelimeEkle" type="Label" parent="."]
-margin_left = 144.0
-margin_top = 40.0
-margin_right = 272.0
-margin_bottom = 95.0
+margin_left = 152.0
+margin_top = 24.0
+margin_right = 280.0
+margin_bottom = 80.0
 custom_fonts/font = SubResource( 1 )
 text = "Kelime
 Ekleme"
@@ -152,10 +153,10 @@ align = 1
 valign = 1
 
 [node name="KelimeÇıkar" type="Label" parent="."]
-margin_left = 368.0
-margin_top = 40.0
-margin_right = 496.0
-margin_bottom = 95.0
+margin_left = 360.0
+margin_top = 24.0
+margin_right = 488.0
+margin_bottom = 80.0
 custom_fonts/font = SubResource( 1 )
 text = "Kelime
 Çıkarma"
@@ -169,25 +170,11 @@ margin_bottom = 424.0
 editable = false
 virtual_keyboard_enabled = false
 
-[node name="OsmanlicaTurkce" type="TextEdit" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 512.0
-margin_top = 176.0
-margin_right = 640.0
-margin_bottom = 320.0
-custom_fonts/font = SubResource( 18 )
-readonly = true
-highlight_current_line = true
-syntax_highlighting = true
-show_line_numbers = true
-virtual_keyboard_enabled = false
-
 [node name="NormalYeri" type="Camera2D" parent="."]
 position = Vector2( 320, 160 )
 
 [node name="AndroidYeri" type="Camera2D" parent="."]
-position = Vector2( 320, 264 )
+position = Vector2( 320, 248 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -197,42 +184,42 @@ one_shot = true
 wait_time = 3.0
 
 [node name="KelimeYok" type="Label" parent="."]
-visible = false
 margin_left = 352.0
-margin_top = 224.0
-margin_right = 512.0
-margin_bottom = 238.0
+margin_top = 208.0
+margin_right = 496.0
+margin_bottom = 219.0
 custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
 
 [node name="KelimeYok2" type="Label" parent="."]
-visible = false
-margin_left = 128.0
-margin_top = 224.0
+margin_left = 144.0
+margin_top = 208.0
 margin_right = 288.0
-margin_bottom = 238.0
+margin_bottom = 219.0
 custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
 
 [node name="OsmanlicaEkle" type="LineEdit" parent="."]
-margin_left = 128.0
-margin_top = 112.0
-margin_right = 288.0
-margin_bottom = 152.0
+margin_left = 296.0
+margin_top = 96.0
+margin_right = 456.0
+margin_bottom = 136.0
+rect_scale = Vector2( -1, 1 )
 custom_fonts/font = SubResource( 19 )
 align = 1
 expand_to_text_length = true
-placeholder_text = "Osmanlıca"
+context_menu_enabled = false
+placeholder_text = "acılnamsO"
 caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="OsmanlicaCikar" type="LineEdit" parent="."]
-margin_left = 352.0
-margin_top = 112.0
-margin_right = 512.0
-margin_bottom = 152.0
+margin_left = 344.0
+margin_top = 96.0
+margin_right = 504.0
+margin_bottom = 136.0
 custom_fonts/font = SubResource( 8 )
 align = 1
 placeholder_text = "Türkçe"
@@ -240,10 +227,10 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="TurkceEkle" type="LineEdit" parent="."]
-margin_left = 128.0
-margin_top = 176.0
-margin_right = 288.0
-margin_bottom = 216.0
+margin_left = 136.0
+margin_top = 160.0
+margin_right = 296.0
+margin_bottom = 200.0
 custom_fonts/font = SubResource( 6 )
 align = 1
 placeholder_text = "Türkçe"
@@ -251,10 +238,10 @@ caret_blink = true
 caret_blink_speed = 0.5
 
 [node name="Ekle" type="Button" parent="."]
-margin_left = 176.0
-margin_top = 240.0
-margin_right = 240.0
-margin_bottom = 268.0
+margin_left = 184.0
+margin_top = 224.0
+margin_right = 248.0
+margin_bottom = 252.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0.294118, 0.545098, 0.960784, 1 )
 custom_colors/font_color = Color( 0.294118, 0.545098, 0.960784, 1 )
@@ -264,10 +251,10 @@ custom_fonts/font = SubResource( 2 )
 text = "Ekle"
 
 [node name="Cikar" type="Button" parent="."]
-margin_left = 400.0
-margin_top = 240.0
-margin_right = 464.0
-margin_bottom = 268.0
+margin_left = 392.0
+margin_top = 224.0
+margin_right = 456.0
+margin_bottom = 252.0
 custom_colors/font_color_focus = Color( 0.294118, 0.545098, 0.960784, 1 )
 custom_colors/font_color = Color( 0.294118, 0.545098, 0.960784, 1 )
 custom_colors/font_color_hover = Color( 0.294118, 0.545098, 0.960784, 1 )
@@ -276,10 +263,10 @@ custom_fonts/font = SubResource( 3 )
 text = "Çıkar"
 
 [node name="KelimeListe" type="Button" parent="."]
-margin_left = 352.0
-margin_top = 176.0
-margin_right = 512.0
-margin_bottom = 216.0
+margin_left = 344.0
+margin_top = 160.0
+margin_right = 504.0
+margin_bottom = 200.0
 custom_colors/font_color_focus = Color( 0.596078, 0.764706, 0.47451, 1 )
 custom_colors/font_color = Color( 0.596078, 0.764706, 0.47451, 1 )
 custom_colors/font_color_hover = Color( 0.596078, 0.764706, 0.47451, 1 )
@@ -304,10 +291,22 @@ autoplay = "Başlangıç"
 anims/Kapanma = SubResource( 16 )
 anims/RESET = SubResource( 20 )
 
-[connection signal="focus_entered" from="Panel" to="." method="_on_Panel_focus_entered"]
+[node name="OsmanlicaTurkce" type="TextEdit" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 456.0
+margin_top = 160.0
+margin_right = 640.0
+margin_bottom = 320.0
+custom_fonts/font = SubResource( 18 )
+readonly = true
+highlight_current_line = true
+syntax_highlighting = true
+show_line_numbers = true
+virtual_keyboard_enabled = false
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
-[connection signal="focus_exited" from="OsmanlicaEkle" to="." method="_on_OsmanlicaEkle_focus_exited"]
 [connection signal="button_up" from="Ekle" to="." method="_on_Ekle_button_up"]
 [connection signal="pressed" from="Ekle" to="." method="_on_Ekle_pressed"]
 [connection signal="button_up" from="Cikar" to="." method="_on_Cikar_button_up"]

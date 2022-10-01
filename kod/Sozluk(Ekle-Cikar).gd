@@ -39,7 +39,8 @@ func _on_Ekle_pressed():
 
 	#yazılan yere yazı yazıldıysa eklme
 	if not $OsmanlicaEkle.text == "" and not $TurkceEkle.text == "" :
-		Osmanlica.append($OsmanlicaEkle.text.to_lower())
+		var cevir = $OsmanlicaEkle.text
+		Osmanlica.append(invert_string(cevir).to_lower())
 		Turkce.append($TurkceEkle.text.to_lower())
 		Genel.dosyaya_yaz(Osmanlica,"Osmanlıca")
 		Genel.dosyaya_yaz(Turkce,"Türkçe")
@@ -126,13 +127,3 @@ func _on_KelimeListe_toggled(button_pressed):
 func _on_Geri_pressed():
 	ButonSesi()
 	get_tree().change_scene("res://Sozluk(Anamenu).tscn")
-
-func _on_OsmanlicaEkle_focus_exited():
-	var cevir = $OsmanlicaEkle.text
-	$OsmanlicaEkle.text = invert_string(cevir)
-
-
-func _on_Panel_focus_entered():
-		$OsmanlicaCikar.release_focus()
-		$OsmanlicaEkle.release_focus()
-		$TurkceEkle.release_focus()

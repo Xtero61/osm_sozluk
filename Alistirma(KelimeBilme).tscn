@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://kod/Alistirma(KelimeBilme).gd" type="Script" id=1]
 [ext_resource path="res://font/Crickhollow Demo.ttf" type="DynamicFontData" id=2]
@@ -41,14 +41,62 @@ Label/constants/shadow_offset_y = 1
 Label/fonts/font = null
 Label/styles/normal = SubResource( 5 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 12
+[sub_resource type="StyleBoxFlat" id=18]
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id=19]
+TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
+TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
+TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
+TextEdit/colors/breakpoint_color = Color( 0.8, 0.8, 0.4, 0.2 )
+TextEdit/colors/caret_background_color = Color( 0, 0, 0, 1 )
+TextEdit/colors/caret_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/code_folding_color = Color( 0.8, 0.8, 0.8, 0.8 )
+TextEdit/colors/completion_background_color = Color( 0.17, 0.16, 0.2, 1 )
+TextEdit/colors/completion_existing_color = Color( 0.87, 0.87, 0.87, 0.13 )
+TextEdit/colors/completion_font_color = Color( 0.67, 0.67, 0.67, 1 )
+TextEdit/colors/completion_scroll_color = Color( 1, 1, 1, 0.29 )
+TextEdit/colors/completion_selected_color = Color( 0.26, 0.26, 0.27, 1 )
+TextEdit/colors/current_line_color = Color( 0.25, 0.25, 0.26, 0.8 )
+TextEdit/colors/executing_line_color = Color( 0.2, 0.8, 0.2, 0.4 )
+TextEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+TextEdit/colors/font_color_readonly = Color( 0.88, 0.88, 0.88, 0.5 )
+TextEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
+TextEdit/colors/function_color = Color( 0.4, 0.64, 0.81, 1 )
+TextEdit/colors/line_number_color = Color( 0.67, 0.67, 0.67, 0.4 )
+TextEdit/colors/mark_color = Color( 1, 0.4, 0.4, 0.4 )
+TextEdit/colors/member_variable_color = Color( 0.9, 0.31, 0.35, 1 )
+TextEdit/colors/number_color = Color( 0.92, 0.58, 0.2, 1 )
+TextEdit/colors/safe_line_number_color = Color( 0.67, 0.78, 0.67, 0.6 )
+TextEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
+TextEdit/colors/symbol_color = Color( 0.94, 0.94, 0.94, 1 )
+TextEdit/colors/word_highlighted_color = Color( 0.8, 0.9, 0.9, 0.15 )
+TextEdit/constants/completion_lines = 7
+TextEdit/constants/completion_max_width = 50
+TextEdit/constants/completion_scroll_width = 6
+TextEdit/constants/line_spacing = 4
+TextEdit/fonts/font = null
+TextEdit/icons/fold = null
+TextEdit/icons/folded = null
+TextEdit/icons/space = null
+TextEdit/icons/tab = null
+TextEdit/styles/completion = null
+TextEdit/styles/focus = null
+TextEdit/styles/normal = SubResource( 18 )
+TextEdit/styles/read_only = null
+
+[sub_resource type="DynamicFont" id=17]
+use_mipmaps = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 14
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=14]
@@ -171,7 +219,7 @@ tracks/1/keys = {
 resource_name = "ipucu"
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("ipucuYazi:rect_scale")
+tracks/0/path = NodePath("ipucuYazi:custom_fonts/font:size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -180,7 +228,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+"values": [ 20, 16 ]
 }
 
 [node name="Alistirma(KelimeBilme)" type="Node2D"]
@@ -237,24 +285,28 @@ align = 1
 valign = 1
 
 [node name="ipucuTema" type="Label" parent="."]
-margin_left = 239.0
+margin_left = 232.0
 margin_top = 123.0
-margin_right = 399.0
-margin_bottom = 160.0
+margin_right = 408.0
+margin_bottom = 164.0
+rect_pivot_offset = Vector2( 112, 18 )
 theme = SubResource( 6 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 
-[node name="ipucuYazi" type="Label" parent="."]
-margin_left = 244.0
-margin_top = 123.0
-margin_right = 347.0
-margin_bottom = 160.0
-rect_pivot_offset = Vector2( 52, 18 )
-custom_fonts/font = SubResource( 7 )
-align = 1
-valign = 1
+[node name="ipucuYazi" type="TextEdit" parent="."]
+margin_left = 237.0
+margin_top = 125.0
+margin_right = 359.0
+margin_bottom = 162.0
+theme = SubResource( 19 )
+custom_fonts/font = SubResource( 17 )
+readonly = true
+syntax_highlighting = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="Cevap" type="LineEdit" parent="."]
 margin_left = 200.0
@@ -286,10 +338,10 @@ icon = ExtResource( 5 )
 icon_align = 1
 
 [node name="İpucu" type="Button" parent="."]
-margin_left = 351.0
+margin_left = 363.0
 margin_top = 127.0
-margin_right = 395.0
-margin_bottom = 155.0
+margin_right = 404.0
+margin_bottom = 160.0
 custom_colors/font_color_focus = Color( 0.0117647, 0.862745, 0.0156863, 1 )
 custom_colors/font_color = Color( 0.0117647, 0.862745, 0.0156863, 1 )
 custom_colors/font_color_hover = Color( 0.0117647, 0.862745, 0.0156863, 1 )
