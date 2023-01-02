@@ -1,0 +1,204 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://font/Times Turkish Transcription.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://kod/Alistirma(CoktanSecmeli).gd" type="Script" id=2]
+[ext_resource path="res://font/Crickhollow Demo.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://ses/528865__eponn__beep-1.wav" type="AudioStream" id=4]
+[ext_resource path="res://ses/483598__raclure__wrong.wav" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Dogru"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("DogruPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.945098, 0.760784, 0.0352941, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DogruPanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Dogru:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Yanlis"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("YanlisPanel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.32549, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YanlisPanel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Yanlis:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="Alistirma(CoktanSecmeli)" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 640.0
+margin_bottom = 320.0
+
+[node name="YanlisPanel" type="Panel" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 320.0
+
+[node name="DogruPanel" type="Panel" parent="."]
+visible = false
+margin_right = 640.0
+margin_bottom = 320.0
+
+[node name="SoslukKelimeYok" type="Label" parent="."]
+visible = false
+margin_left = 56.0
+margin_top = 96.0
+margin_right = 586.0
+margin_bottom = 141.0
+custom_fonts/font = SubResource( 3 )
+text = "Sözlükte dört veya dörtten fazla kelime olmalı !
+   Anamenüye dönüp \" Kelime Ekle / Çıkar \" a basıp kelime ekleyebilirsin  "
+align = 1
+valign = 1
+
+[node name="NormalYeri" type="Camera2D" parent="."]
+position = Vector2( 320, 160 )
+
+[node name="SorulanKelime" type="Label" parent="."]
+margin_top = 48.0
+margin_right = 640.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( 320, 0 )
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+
+[node name="Soru" type="Label" parent="."]
+margin_top = 88.0
+margin_right = 640.0
+margin_bottom = 126.0
+rect_pivot_offset = Vector2( 320, 0 )
+custom_fonts/font = SubResource( 1 )
+text = "yukardaki kelimenin türkçesi şıklardan hangisidir ?"
+align = 1
+valign = 1
+
+[node name="A" type="Button" parent="."]
+margin_left = 80.0
+margin_top = 144.0
+margin_right = 304.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 2 )
+text = "A) "
+clip_text = true
+icon_align = 1
+
+[node name="B" type="Button" parent="."]
+margin_left = 336.0
+margin_top = 144.0
+margin_right = 560.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 2 )
+text = "B) "
+icon_align = 1
+
+[node name="C" type="Button" parent="."]
+margin_left = 80.0
+margin_top = 208.0
+margin_right = 304.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 2 )
+text = "C) "
+icon_align = 1
+
+[node name="D" type="Button" parent="."]
+margin_left = 336.0
+margin_top = 208.0
+margin_right = 560.0
+margin_bottom = 244.0
+custom_fonts/font = SubResource( 2 )
+text = "D) "
+icon_align = 1
+
+[node name="Dogru" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 320, 112 )
+stream = ExtResource( 4 )
+
+[node name="Yanlis" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 320, 112 )
+stream = ExtResource( 5 )
+
+[node name="BilmeAnimasyon" type="AnimationPlayer" parent="."]
+anims/Dogru = SubResource( 4 )
+anims/Yanlis = SubResource( 6 )
+
+[connection signal="pressed" from="A" to="." method="_on_A_pressed"]
+[connection signal="pressed" from="B" to="." method="_on_B_pressed"]
+[connection signal="pressed" from="C" to="." method="_on_C_pressed"]
+[connection signal="pressed" from="D" to="." method="_on_D_pressed"]

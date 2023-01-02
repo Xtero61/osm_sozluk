@@ -14,7 +14,7 @@ size = 20
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 10
+size = 25
 font_data = ExtResource( 9 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -89,6 +89,7 @@ TextEdit/styles/normal = SubResource( 18 )
 TextEdit/styles/read_only = null
 
 [sub_resource type="DynamicFont" id=17]
+size = 18
 use_mipmaps = true
 font_data = ExtResource( 2 )
 
@@ -168,23 +169,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 16, 10 ]
+"values": [ 30, 25 ]
 }
 
 [sub_resource type="Animation" id=13]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Soru:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 168, 85 ) ]
-}
 
 [sub_resource type="Animation" id=10]
 resource_name = "Yanlış"
@@ -200,7 +189,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 200, 176 ), Vector2( 205, 176 ), Vector2( 200, 176 ), Vector2( 195, 176 ), Vector2( 200, 176 ) ]
+"values": [ Vector2( 200, 152 ), Vector2( 205, 152 ), Vector2( 200, 152 ), Vector2( 195, 152 ), Vector2( 200, 152 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Soru:rect_position")
@@ -212,7 +201,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 168, 85 ), Vector2( 173, 85 ), Vector2( 168, 85 ), Vector2( 163, 85 ), Vector2( 168, 85 ) ]
+"values": [ Vector2( 168, 48 ), Vector2( 173, 48 ), Vector2( 168, 48 ), Vector2( 163, 48 ), Vector2( 168, 48 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -228,7 +217,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 20, 16 ]
+"values": [ 20, 18 ]
 }
 
 [node name="Alistirma(KelimeBilme)" type="Node2D"]
@@ -236,28 +225,28 @@ script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 640.0
-margin_bottom = 448.0
+margin_bottom = 376.0
 
 [node name="YanlisPanel" type="Panel" parent="."]
-visible = false
+modulate = Color( 0.32549, 0, 0, 1 )
 margin_right = 640.0
-margin_bottom = 408.0
+margin_bottom = 376.0
 
 [node name="DogruPanel" type="Panel" parent="."]
 visible = false
 margin_right = 640.0
-margin_bottom = 408.0
+margin_bottom = 376.0
 
 [node name="NormalYeri" type="Camera2D" parent="."]
 position = Vector2( 320, 160 )
 
 [node name="AndroidYeri" type="Camera2D" parent="."]
-position = Vector2( 320, 248 )
+position = Vector2( 320, 216 )
 
 [node name="bos" type="LineEdit" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 640.0
-margin_bottom = 432.0
+margin_bottom = 376.0
 editable = false
 virtual_keyboard_enabled = false
 
@@ -274,10 +263,9 @@ align = 1
 valign = 1
 
 [node name="Soru" type="Label" parent="."]
-margin_left = 168.0
-margin_top = 85.0
-margin_right = 472.0
-margin_bottom = 123.0
+margin_top = 48.0
+margin_right = 640.0
+margin_bottom = 86.0
 rect_pivot_offset = Vector2( 152, 19 )
 custom_fonts/font = SubResource( 2 )
 text = "türkçesi ne demek ?"
@@ -285,34 +273,31 @@ align = 1
 valign = 1
 
 [node name="ipucuTema" type="Label" parent="."]
-margin_left = 232.0
-margin_top = 123.0
-margin_right = 408.0
-margin_bottom = 164.0
+margin_left = 136.0
+margin_top = 96.0
+margin_right = 504.0
+margin_bottom = 137.0
 rect_pivot_offset = Vector2( 112, 18 )
 theme = SubResource( 6 )
 custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 
-[node name="ipucuYazi" type="TextEdit" parent="."]
-margin_left = 237.0
-margin_top = 125.0
-margin_right = 359.0
-margin_bottom = 162.0
+[node name="ipucuYazi" type="Label" parent="."]
+margin_left = 144.0
+margin_top = 98.0
+margin_right = 448.0
+margin_bottom = 135.0
 theme = SubResource( 19 )
 custom_fonts/font = SubResource( 17 )
-readonly = true
-syntax_highlighting = true
-context_menu_enabled = false
-virtual_keyboard_enabled = false
-drag_and_drop_selection_enabled = false
+align = 1
+valign = 1
 
 [node name="Cevap" type="LineEdit" parent="."]
-margin_left = 200.0
-margin_top = 176.0
+margin_left = 208.0
+margin_top = 152.0
 margin_right = 360.0
-margin_bottom = 220.0
+margin_bottom = 200.0
 custom_fonts/font = SubResource( 3 )
 align = 1
 placeholder_text = "Cevap"
@@ -329,19 +314,19 @@ icon = ExtResource( 4 )
 icon_align = 1
 
 [node name="Enter" type="Button" parent="."]
-margin_left = 376.0
-margin_top = 184.0
-margin_right = 440.0
-margin_bottom = 212.0
+margin_left = 368.0
+margin_top = 160.0
+margin_right = 432.0
+margin_bottom = 192.0
 custom_fonts/font = SubResource( 4 )
 icon = ExtResource( 5 )
 icon_align = 1
 
 [node name="İpucu" type="Button" parent="."]
-margin_left = 363.0
-margin_top = 127.0
-margin_right = 404.0
-margin_bottom = 160.0
+margin_left = 456.0
+margin_top = 100.0
+margin_right = 497.0
+margin_bottom = 133.0
 custom_colors/font_color_focus = Color( 0.0117647, 0.862745, 0.0156863, 1 )
 custom_colors/font_color = Color( 0.0117647, 0.862745, 0.0156863, 1 )
 custom_colors/font_color_hover = Color( 0.0117647, 0.862745, 0.0156863, 1 )
@@ -366,15 +351,15 @@ anims/RESET = SubResource( 13 )
 anims/ipucu = SubResource( 12 )
 
 [node name="Dogru" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 315, 141 )
+position = Vector2( 320, 112 )
 stream = ExtResource( 6 )
 
 [node name="Yanlis" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 315, 141 )
+position = Vector2( 320, 112 )
 stream = ExtResource( 7 )
 
 [node name="ipucu" type="AudioStreamPlayer2D" parent="."]
-position = Vector2( 315, 141 )
+position = Vector2( 320, 112 )
 stream = ExtResource( 8 )
 
 [connection signal="pressed" from="Geri" to="." method="_on_Geri_pressed"]

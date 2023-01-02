@@ -9,6 +9,7 @@ var random_kelime : int
 var bosluk_payi : int = 0
 var aldi_ipucu : int = 0
 var bayrak : int = 1
+var ipucu_satir_boyu : int = 40
 
 #sözlük kelime listeye yazma
 func _ready():
@@ -69,12 +70,17 @@ func cevap_kontrol():
 #ipucu butonuna basınca çağrılan fonsiyon
 func ipucu_al():
 	var ipucu = Turkce[random_kelime-1]
-	var ipucuarti : int = 0	
+	var ipucuarti : int = 0
 	$ipucuYazi.text = ""
 	if aldi_ipucu-1 < ipucu.length()-bosluk_payi:
 		$ipucu.play()
 		$ipucuAnimasyon.play("ipucu")
+	var a = 0
 	for i in ipucu:
+		a += 1 
+		if a == ipucu_satir_boyu :
+			a = 0
+			$ipucuYazi.text += "\n"
 		if not i == " ":
 			if ipucuarti < aldi_ipucu:
 				$ipucuYazi.text += i
@@ -86,9 +92,14 @@ func ipucu_al():
 
 #her soru yenilenince çağrılan fonsiyon
 func ipucu_bosalt(ipucu):
+	var a = 0
 	aldi_ipucu = 0
 	$ipucuYazi.text = ""
 	for i in ipucu:
+		a += 1
+		if a == ipucu_satir_boyu :
+			a = 0
+			$ipucuYazi.text += "\n"
 		if i == " ":
 			$ipucuYazi.text += " "
 		else :
