@@ -27,13 +27,6 @@ func Liste_guncelleme():
 	for i in range(0,Osmanlica.size()):
 		$OsmanlicaTurkce.text += Osmanlica[i] + " = " + Turkce[i] + "\n"
 
-#buton tıklama sesi
-func ButonSesi():
-	var ButonSesi = load("res://ses/ButonSesi.tscn")
-	var Buton = ButonSesi.instance()
-	Buton.position = Vector2(320,160)
-	get_parent().add_child(Buton)
-
 #kelime ekleme
 func _on_Ekle_pressed():
 
@@ -69,7 +62,7 @@ func _on_Ekle_pressed():
 
 #kelime çıkarma
 func _on_Cikar_pressed():
-	ButonSesi()
+	Genel.ButonSesi()
 	var arama = Turkce.find($OsmanlicaCikar.text.to_lower())
 	
 	#kelime cıkara hiç yazı yazmamışsa cıkacak yazı
@@ -97,13 +90,13 @@ func _on_Cikar_pressed():
 
 #ekle butonuna basınca yazı yerlerini boşaltma
 func _on_Ekle_button_up():
-	ButonSesi()
+	Genel.ButonSesi()
 	$OsmanlicaEkle.text = ""
 	$TurkceEkle.text = ""
 
 #çıkar butonuna basınca yazı yerini boşaltma
 func _on_Cikar_button_up():
-	ButonSesi()
+	Genel.ButonSesi()
 	$OsmanlicaCikar.text = ""
 
  #hata yazılarını ekranda bekleme süresinin bittiği yer
@@ -117,13 +110,13 @@ func _on_Timer2_timeout():
 #kelime listesini görme
 func _on_KelimeListe_toggled(button_pressed):
 	if button_pressed == true:
-		ButonSesi()
+		Genel.ButonSesi()
 		$AnimationPlayer.play("Açılma")
 	else :
-		ButonSesi()
+		Genel.ButonSesi()
 		$AnimationPlayer.play("Kapanma")
 
 #anamenüye dönme
 func _on_Geri_pressed():
-	ButonSesi()
+	Genel.ButonSesi()
 	get_tree().change_scene("res://Sozluk(Anamenu).tscn")

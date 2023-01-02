@@ -18,6 +18,13 @@ func dosyadan_oku(sozluk_adi):
 	
 	return liste
 
+#butana tıklayınca çıkan ses
+func ButonSesi():
+	var ButonSesi = load("res://ses/ButonSesi.tscn")
+	var Buton = ButonSesi.instance()
+	Buton.position = Vector2(320,160)
+	get_parent().add_child(Buton)
+
 #ekranı telefonun klavyeli ekranına göre ayarlama
 func Android_Klavye(Android_camera,Normal_camera):
 	var Klavye_durum = OS.get_virtual_keyboard_height()

@@ -105,16 +105,9 @@ func ipucu_bosalt(ipucu):
 		else :
 			$ipucuYazi.text += "-"
 
-#butona basınca çıkan ses
-func ButonSesi():
-	var ButonSesi = load("res://ses/ButonSesi.tscn")
-	var Buton = ButonSesi.instance()
-	Buton.position = Vector2(320,160)
-	get_parent().add_child(Buton)
-
 func _on_Geri_pressed():
+	Genel.ButonSesi()
 	get_tree().change_scene("res://Alistirma(Secme).tscn")
-	ButonSesi()
 
 func _on_Enter_pressed():
 	cevap_kontrol()

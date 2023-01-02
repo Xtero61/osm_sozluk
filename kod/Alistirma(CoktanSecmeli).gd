@@ -143,3 +143,7 @@ func _on_C_pressed():
 
 func _on_D_pressed():
 	cevap_kontrol(d_daki_cevap)
+
+func _on_Geri_pressed():
+	Genel.ButonSesi()
+	get_tree().change_scene("res://Alistirma(Secme).tscn")

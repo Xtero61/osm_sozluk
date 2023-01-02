@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://font/Times Turkish Transcription.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://kod/Alistirma(CoktanSecmeli).gd" type="Script" id=2]
 [ext_resource path="res://font/Crickhollow Demo.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://ses/528865__eponn__beep-1.wav" type="AudioStream" id=4]
 [ext_resource path="res://ses/483598__raclure__wrong.wav" type="AudioStream" id=5]
+[ext_resource path="res://resim/screenshot (1).png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -97,6 +98,9 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 3 )
 
 [node name="Alistirma(CoktanSecmeli)" type="Node2D"]
 script = ExtResource( 2 )
@@ -198,7 +202,17 @@ stream = ExtResource( 5 )
 anims/Dogru = SubResource( 4 )
 anims/Yanlis = SubResource( 6 )
 
+[node name="Geri" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 280.0
+margin_right = 80.0
+margin_bottom = 308.0
+custom_fonts/font = SubResource( 7 )
+icon = ExtResource( 6 )
+icon_align = 1
+
 [connection signal="pressed" from="A" to="." method="_on_A_pressed"]
 [connection signal="pressed" from="B" to="." method="_on_B_pressed"]
 [connection signal="pressed" from="C" to="." method="_on_C_pressed"]
 [connection signal="pressed" from="D" to="." method="_on_D_pressed"]
+[connection signal="pressed" from="Geri" to="." method="_on_Geri_pressed"]
