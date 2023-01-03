@@ -121,8 +121,8 @@ func _process(_delta):
 			bayrak = 0
 
 		if bayrak == 0 :
-			$SorulanKelime.text = "' %s '" % SorulanListe[random_kelime-1].capitalize()
 			$Soru.text = "Yukardaki kelimenin %s şıklardan hangisidir ?" % sozluk
+			$SorulanKelime.text = "' %s '" % SorulanListe[random_kelime-1].capitalize()
 			bayrak = 2
 	else :
 		$SoslukKelimeYok.visible = true
@@ -141,16 +141,16 @@ func cevap_kontrol(cevap):
 		$BilmeAnimasyon.play("Yanlis")
 
 func sorulma_sekli_deis():
-	if sozluk == "türlçesi":
+	if sozluk == "türkçesi":
 		sozluk = "osmanlıcası"
+		$Degistir.text = "Türkçe"
 		SorulanListe = Turkce
 		CevaptakiListe = Osmanlica
-		$"Değiştir".text = "Türkçe"
-	else :
-		sozluk = "türlçesi"
+	elif sozluk == "osmanlıcası":
+		sozluk = "türkçesi"
+		$Degistir.text = "Osmanlıca"
 		SorulanListe = Osmanlica
 		CevaptakiListe = Turkce
-		$"Değiştir".text = "Osmanlıca"
 	bayrak = 1
 
 func _on_A_pressed():
@@ -169,5 +169,6 @@ func _on_Geri_pressed():
 	Genel.ButonSesi()
 	get_tree().change_scene("res://Alistirma(Secme).tscn")
 
-func _on_Deitir_pressed():
+func _on_Degistir_pressed():
 	sorulma_sekli_deis()
+

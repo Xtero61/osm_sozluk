@@ -2,8 +2,8 @@
 
 [ext_resource path="res://kod/Alistirma(KelimeBilme).gd" type="Script" id=1]
 [ext_resource path="res://font/Crickhollow Demo.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://resim/screenshot (1).png" type="Texture" id=4]
-[ext_resource path="res://resim/screenshot1.png" type="Texture" id=5]
+[ext_resource path="res://resim/geri.png" type="Texture" id=4]
+[ext_resource path="res://resim/enter.png" type="Texture" id=5]
 [ext_resource path="res://ses/528865__eponn__beep-1.wav" type="AudioStream" id=6]
 [ext_resource path="res://ses/483598__raclure__wrong.wav" type="AudioStream" id=7]
 [ext_resource path="res://ses/320181__dland__hint.wav" type="AudioStream" id=8]

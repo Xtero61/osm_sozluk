@@ -5,7 +5,7 @@
 [ext_resource path="res://font/Crickhollow Demo.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://ses/528865__eponn__beep-1.wav" type="AudioStream" id=4]
 [ext_resource path="res://ses/483598__raclure__wrong.wav" type="AudioStream" id=5]
-[ext_resource path="res://resim/screenshot (1).png" type="Texture" id=6]
+[ext_resource path="res://resim/geri.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=3]
 size = 20
@@ -18,6 +18,10 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Dogru"
@@ -98,10 +102,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
-
-[sub_resource type="DynamicFont" id=7]
-size = 20
-font_data = ExtResource( 3 )
 
 [node name="Alistirma(ŞıklıSorular)" type="Node2D"]
 script = ExtResource( 2 )
@@ -200,10 +200,6 @@ stream = ExtResource( 4 )
 position = Vector2( 320, 112 )
 stream = ExtResource( 5 )
 
-[node name="BilmeAnimasyon" type="AnimationPlayer" parent="."]
-anims/Dogru = SubResource( 4 )
-anims/Yanlis = SubResource( 6 )
-
 [node name="Geri" type="Button" parent="."]
 margin_left = 16.0
 margin_top = 280.0
@@ -213,7 +209,7 @@ custom_fonts/font = SubResource( 7 )
 icon = ExtResource( 6 )
 icon_align = 1
 
-[node name="Değiştir" type="Button" parent="."]
+[node name="Degistir" type="Button" parent="."]
 margin_left = 536.0
 margin_top = 280.0
 margin_right = 626.0
@@ -225,12 +221,15 @@ custom_colors/font_color_hover = Color( 0.494118, 1, 0, 1 )
 custom_colors/font_color_pressed = Color( 0.494118, 1, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Osmanlıca"
-clip_text = true
 icon_align = 1
+
+[node name="BilmeAnimasyon" type="AnimationPlayer" parent="."]
+anims/Dogru = SubResource( 4 )
+anims/Yanlis = SubResource( 6 )
 
 [connection signal="pressed" from="A" to="." method="_on_A_pressed"]
 [connection signal="pressed" from="B" to="." method="_on_B_pressed"]
 [connection signal="pressed" from="C" to="." method="_on_C_pressed"]
 [connection signal="pressed" from="D" to="." method="_on_D_pressed"]
 [connection signal="pressed" from="Geri" to="." method="_on_Geri_pressed"]
-[connection signal="pressed" from="Değiştir" to="." method="_on_Deitir_pressed"]
+[connection signal="pressed" from="Degistir" to="." method="_on_Degistir_pressed"]

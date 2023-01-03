@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://font/Crickhollow Demo.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://resim/screenshot (1).png" type="Texture" id=2]
+[ext_resource path="res://resim/geri.png" type="Texture" id=2]
 [ext_resource path="res://kod/Alistirma(Secme).gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
