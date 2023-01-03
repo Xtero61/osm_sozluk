@@ -13,5 +13,4 @@ func _on_Cks_pressed():
 	$Timer.start()
 
 func _on_Timer_timeout():
-	Genel.ButonSesi()
 	get_tree().quit()
