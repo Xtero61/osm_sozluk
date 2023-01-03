@@ -10,4 +10,4 @@ func _on_Geri_pressed():
 
 func _on_SklSorular_pressed():
 	Genel.ButonSesi()
-	get_tree().change_scene("res://Alistirma(CoktanSecmeli).tscn")
+	get_tree().change_scene("res://Alistirma(ŞıklıSorular).tscn")

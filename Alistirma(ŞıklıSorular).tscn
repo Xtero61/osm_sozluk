@@ -17,7 +17,7 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
 [sub_resource type="Animation" id=4]
 resource_name = "Dogru"
@@ -100,9 +100,10 @@ tracks/2/keys = {
 }
 
 [sub_resource type="DynamicFont" id=7]
+size = 20
 font_data = ExtResource( 3 )
 
-[node name="Alistirma(CoktanSecmeli)" type="Node2D"]
+[node name="Alistirma(ŞıklıSorular)" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
@@ -131,14 +132,13 @@ text = "Sözlükte dört veya dörtten fazla kelime olmalı !
 align = 1
 valign = 1
 
-[node name="NormalYeri" type="Camera2D" parent="."]
-position = Vector2( 320, 160 )
-
 [node name="SorulanKelime" type="Label" parent="."]
 margin_top = 48.0
 margin_right = 640.0
 margin_bottom = 86.0
 rect_pivot_offset = Vector2( 320, 0 )
+custom_colors/font_color = Color( 0.564706, 0.666667, 0.827451, 1 )
+custom_colors/font_outline_modulate = Color( 0.564706, 0.666667, 0.827451, 1 )
 custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
@@ -148,8 +148,10 @@ margin_top = 88.0
 margin_right = 640.0
 margin_bottom = 126.0
 rect_pivot_offset = Vector2( 320, 0 )
+custom_colors/font_color = Color( 0.458824, 0.247059, 0.145098, 1 )
+custom_colors/font_outline_modulate = Color( 0.458824, 0.247059, 0.145098, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "yukardaki kelimenin türkçesi şıklardan hangisidir ?"
+text = "Yukardaki kelimenin türkçesi şıklardan hangisidir ?"
 align = 1
 valign = 1
 
@@ -211,8 +213,24 @@ custom_fonts/font = SubResource( 7 )
 icon = ExtResource( 6 )
 icon_align = 1
 
+[node name="Değiştir" type="Button" parent="."]
+margin_left = 536.0
+margin_top = 280.0
+margin_right = 626.0
+margin_bottom = 308.0
+custom_colors/font_color_disabled = Color( 0.494118, 1, 0, 1 )
+custom_colors/font_color_focus = Color( 0.494118, 1, 0, 1 )
+custom_colors/font_color = Color( 0.494118, 1, 0, 1 )
+custom_colors/font_color_hover = Color( 0.494118, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.494118, 1, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Osmanlıca"
+clip_text = true
+icon_align = 1
+
 [connection signal="pressed" from="A" to="." method="_on_A_pressed"]
 [connection signal="pressed" from="B" to="." method="_on_B_pressed"]
 [connection signal="pressed" from="C" to="." method="_on_C_pressed"]
 [connection signal="pressed" from="D" to="." method="_on_D_pressed"]
 [connection signal="pressed" from="Geri" to="." method="_on_Geri_pressed"]
+[connection signal="pressed" from="Değiştir" to="." method="_on_Deitir_pressed"]

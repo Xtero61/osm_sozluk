@@ -94,6 +94,7 @@ use_mipmaps = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 25
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -201,7 +202,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 168, 48 ), Vector2( 173, 48 ), Vector2( 168, 48 ), Vector2( 163, 48 ), Vector2( 168, 48 ) ]
+"values": [ Vector2( 0, 48 ), Vector2( 5, 48 ), Vector2( 0, 48 ), Vector2( -5, 48 ), Vector2( 0, 48 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -217,7 +218,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 20, 18 ]
+"values": [ 22, 18 ]
 }
 
 [node name="Alistirma(KelimeBilme)" type="Node2D"]
@@ -228,7 +229,7 @@ margin_right = 640.0
 margin_bottom = 376.0
 
 [node name="YanlisPanel" type="Panel" parent="."]
-modulate = Color( 0.32549, 0, 0, 1 )
+visible = false
 margin_right = 640.0
 margin_bottom = 376.0
 
@@ -266,7 +267,9 @@ valign = 1
 margin_top = 48.0
 margin_right = 640.0
 margin_bottom = 86.0
-rect_pivot_offset = Vector2( 152, 19 )
+rect_pivot_offset = Vector2( 320, 16 )
+custom_colors/font_color = Color( 0.564706, 0.666667, 0.827451, 1 )
+custom_colors/font_outline_modulate = Color( 0.564706, 0.666667, 0.827451, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "türkçesi ne demek ?"
 align = 1
@@ -289,14 +292,16 @@ margin_top = 98.0
 margin_right = 448.0
 margin_bottom = 135.0
 theme = SubResource( 19 )
+custom_colors/font_color = Color( 0.0156863, 0.847059, 0.0196078, 1 )
+custom_colors/font_outline_modulate = Color( 0.0156863, 0.847059, 0.0196078, 1 )
 custom_fonts/font = SubResource( 17 )
 align = 1
 valign = 1
 
 [node name="Cevap" type="LineEdit" parent="."]
-margin_left = 208.0
+margin_left = 184.0
 margin_top = 152.0
-margin_right = 360.0
+margin_right = 376.0
 margin_bottom = 200.0
 custom_fonts/font = SubResource( 3 )
 align = 1
@@ -314,9 +319,9 @@ icon = ExtResource( 4 )
 icon_align = 1
 
 [node name="Enter" type="Button" parent="."]
-margin_left = 368.0
+margin_left = 392.0
 margin_top = 160.0
-margin_right = 432.0
+margin_right = 456.0
 margin_bottom = 192.0
 custom_fonts/font = SubResource( 4 )
 icon = ExtResource( 5 )
