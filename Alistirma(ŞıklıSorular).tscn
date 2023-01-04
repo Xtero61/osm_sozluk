@@ -62,6 +62,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("SorulanKelime:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 48 ), Vector2( 5, 48 ), Vector2( 0, 48 ), Vector2( -5, 48 ), Vector2( 0, 48 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "Yanlis"
@@ -101,6 +113,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("SorulanKelime:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 48 ), Vector2( 5, 48 ), Vector2( 0, 48 ), Vector2( -5, 48 ), Vector2( 0, 48 ) ]
 }
 
 [node name="Alistirma(ŞıklıSorular)" type="Node2D"]
