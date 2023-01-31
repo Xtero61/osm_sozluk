@@ -28,7 +28,9 @@ func ButonSesi():
 #ekranı telefonun klavyeli ekranına göre ayarlama
 func Android_Klavye(Android_camera,Normal_camera):
 	var Klavye_durum = OS.get_virtual_keyboard_height()
-	if (Klavye_durum == 0) :
+	if Klavye_durum <= 0 :
 		Normal_camera.current = true
+		Android_camera.current = false
 	else :
+		Normal_camera.current = false
 		Android_camera.current = true
