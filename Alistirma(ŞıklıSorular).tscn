@@ -16,7 +16,6 @@ size = 25
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -72,7 +71,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 48 ), Vector2( 5, 48 ), Vector2( 0, 48 ), Vector2( -5, 48 ), Vector2( 0, 48 ) ]
+"values": [ Vector2( 0, 24 ), Vector2( 5, 24 ), Vector2( 0, 24 ), Vector2( -5, 24 ), Vector2( 0, 24 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -124,7 +123,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 48 ), Vector2( 5, 48 ), Vector2( 0, 48 ), Vector2( -5, 48 ), Vector2( 0, 48 ) ]
+"values": [ Vector2( 0, 24 ), Vector2( 5, 24 ), Vector2( 0, 24 ), Vector2( -5, 24 ), Vector2( 0, 24 ) ]
 }
 
 [node name="Alistirma(ŞıklıSorular)" type="Node2D"]
@@ -157,9 +156,9 @@ align = 1
 valign = 1
 
 [node name="SorulanKelime" type="Label" parent="."]
-margin_top = 48.0
+margin_top = 24.0
 margin_right = 640.0
-margin_bottom = 86.0
+margin_bottom = 62.0
 rect_pivot_offset = Vector2( 320, 0 )
 custom_colors/font_color = Color( 0.564706, 0.666667, 0.827451, 1 )
 custom_colors/font_outline_modulate = Color( 0.564706, 0.666667, 0.827451, 1 )
@@ -168,9 +167,9 @@ align = 1
 valign = 1
 
 [node name="Soru" type="Label" parent="."]
-margin_top = 88.0
+margin_top = 62.0
 margin_right = 640.0
-margin_bottom = 126.0
+margin_bottom = 100.0
 rect_pivot_offset = Vector2( 320, 0 )
 custom_colors/font_color = Color( 0.458824, 0.247059, 0.145098, 1 )
 custom_colors/font_outline_modulate = Color( 0.458824, 0.247059, 0.145098, 1 )
@@ -180,38 +179,38 @@ align = 1
 valign = 1
 
 [node name="A" type="Button" parent="."]
-margin_left = 80.0
-margin_top = 144.0
-margin_right = 304.0
-margin_bottom = 180.0
+margin_left = 96.0
+margin_top = 112.0
+margin_right = 544.0
+margin_bottom = 141.0
 custom_fonts/font = SubResource( 2 )
 text = "A) "
 clip_text = true
 icon_align = 1
 
 [node name="B" type="Button" parent="."]
-margin_left = 336.0
-margin_top = 144.0
-margin_right = 560.0
-margin_bottom = 180.0
+margin_left = 96.0
+margin_top = 152.0
+margin_right = 544.0
+margin_bottom = 181.0
 custom_fonts/font = SubResource( 2 )
 text = "B) "
 icon_align = 1
 
 [node name="C" type="Button" parent="."]
-margin_left = 80.0
-margin_top = 208.0
-margin_right = 304.0
-margin_bottom = 244.0
+margin_left = 96.0
+margin_top = 192.0
+margin_right = 544.0
+margin_bottom = 221.0
 custom_fonts/font = SubResource( 2 )
 text = "C) "
 icon_align = 1
 
 [node name="D" type="Button" parent="."]
-margin_left = 336.0
-margin_top = 208.0
-margin_right = 560.0
-margin_bottom = 244.0
+margin_left = 96.0
+margin_top = 232.0
+margin_right = 544.0
+margin_bottom = 261.0
 custom_fonts/font = SubResource( 2 )
 text = "D) "
 icon_align = 1
